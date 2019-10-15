@@ -1,11 +1,11 @@
 'use strict';
 const sequelize = require('sequelize')
 const db = new sequelize({
-    database: "postgres",
-    username: "postgres",
-    password: "admin",
-    host: "localhost",
-    port: 5432,
+    database: process.env.DB_NAME || "postgres",
+    username: process.env.DB_USER || "postgres",
+    password: process.env.DB_PASS || "admin",
+    host: process.env.DB_HOST || "localhost",
+    port: process.env.DB_PORT || 5432,
     dialect: 'postgres',
     define: {
         freezeTableName: true // định nghĩa bảng table có tên giống tên định nghĩa. Nếu không có thì trong database sẽ tự động thêm "s" vào table
